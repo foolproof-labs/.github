@@ -1,65 +1,36 @@
-# 🔬 Foolproof Labs
+# Foolproof Labs
 
-> *"The first principle is that you must not fool yourself — and you are the easiest person to fool."*
-> — Richard P. Feynman
+Open-source tools for making quantitative research easier to audit and harder to fool yourself about.
 
----
+The projects are small, composable utilities. They do not promise profitable strategies, replace domain review, or make an entire research process automatically correct. Each tool makes one risk or assumption explicit and testable.
 
-## 🧠 What We Believe
+## Projects
 
-In quantitative research, the hardest enemy is not the market. It's **your own cognitive bias**.
+| Project | Purpose |
+| --- | --- |
+| [ashare-data-immunity](https://github.com/foolproof-labs/ashare-data-immunity) | Quality checks for A-share daily bars: OHLCV validation, board-aware price limits, suspension detection, listing and continuity audits, and snapshot manifests. |
+| [pit-adjuster](https://github.com/foolproof-labs/pit-adjuster) | Point-in-time fixed-basis price reconstruction from corporate-action archives, with adjustment-convention drift checks. |
+| [lookahead-free](https://github.com/foolproof-labs/lookahead-free) | Declarative checks that a time-annotated data pipeline does not give a decision data before it was available. |
+| [factor-qc](https://github.com/foolproof-labs/factor-qc) | A fail-closed backtest quality gate for DSR, PBO, multiple-testing haircuts, and minimum track record length. |
+| [falsification-ledger](https://github.com/foolproof-labs/falsification-ledger) | A hash-chained record for pre-registering research claims, falsification evidence, adjudication, and hit-rate reports. |
+| [lesson-book](https://github.com/foolproof-labs/lesson-book) | A local, deterministic mistake ledger that surfaces similar past situations before the next action. |
 
-- Forward-looking bias (future leakage) → fooling yourself about strategy performance.
-- PIT drift & stale data → fooling yourself about risk exposure.
-- Factor overfitting & QC bypass → fooling yourself about signal quality.
-- Untracked mistakes → fooling yourself about what you've already tried.
+## 中文简介
 
-We build open-source toolchains to make **self-deception structurally impossible**.
+Foolproof Labs 是一组面向量化研究的开源小工具，重点是让数据、时间、统计结论和研究经验更容易检查。
 
----
+其中 `ashare-data-immunity` 和 `pit-adjuster` 直接面向 A 股常见的数据问题；`lookahead-free`、`factor-qc`、`falsification-ledger` 和 `lesson-book` 也适用于 A 股量化研究流程。它们分别处理数据质量、复权与公司行为、未来数据检查、回测统计检验、研究假设记录和经验提醒。工具不荐股、不承诺收益，也不替代交易所规则、数据供应商说明或人工复核。
 
-## 🛠️ The Toolchain
+## Shared principles
 
-Our projects follow a unified protocol: **decoupled context, parameterized, MIT-licensed, gold-standard English README, examples/, pyproject.toml, battle-tested, and sensitivity-checked.**
+- Small tools with explicit inputs, outputs, and limits.
+- Read-only checks wherever a check is all that is needed.
+- Reproducible local workflows and machine-readable results.
+- MIT-licensed code with tests and examples.
+- Honest boundaries: a warning or pass is evidence about a check, not proof of a profitable strategy.
 
-| Project | What It Prevents You From Faking |
-| :--- | :--- |
-| **[pit-adjuster](https://github.com/foolproof-labs/pit-adjuster)** | Point-in-time (PIT) adjustment engine — prevents using future data to rewrite history. |
-| **[falsification-ledger](https://github.com/foolproof-labs/falsification-ledger)** | A public ledger for falsifiable research — prevents untestable, hand-wavy conclusions. |
-| **[factor-qc](https://github.com/foolproof-labs/factor-qc)** | Factor quality gatekeeping — prevents garbage factors from polluting your pipeline. |
-| **[lesson-book](https://github.com/foolproof-labs/lesson-book)** | Tuition memory — prevents repeating the same expensive mistakes. |
-| **[lookahead-free](https://github.com/foolproof-labs/lookahead-free)** | Formal timing verifier — prevents time-traveling in backtests. |
-| **[ashare-data-immunity](https://github.com/foolproof-labs/ashare-data-immunity)** | Data immunity for A-share markets — prevents dirty, survivorship-biased data from corrupting research. |
+## Contributing
 
----
+Issues and pull requests are welcome. Please include a small reproducible example, the expected result, and the data or rule assumption involved. For A-share issues, state the market board, date range, data source, and the relevant exchange rule or vendor convention when available.
 
-## 📦 Ecosystem Principles
-
-- **🔗 Decoupled & Context-Aware** — each tool works standalone, but they sing together under the foolproof workflow.
-- **🧪 Parameterized & Test-First** — every release is battle-tested against edge cases.
-- **📖 English-First Documentation** — gold-structure README (What → Why → How → Example → API → Contributing).
-- **🛡️ MIT Licensed** — free for academia, hedge funds, and tinkerers alike.
-- **🔍 Sensitivity-Finalized** — zero risky keywords before every push.
-
----
-
-## 🌱 Get Involved
-
-We welcome:
-- 🐛 Bug reports & edge-case discoveries
-- 📈 Real-world A-share data scenarios
-- 🔧 PRs that strengthen the "foolproofness" of any tool
-
-**Remember: If you're not fooling yourself, you're already ahead of 90% of the market.**
-
----
-
-## 📫 Connect
-
-- Issues & Discussions: GitHub
-- Twitter / X: [@foolproof_labs](https://twitter.com/foolproof_labs) *(reserve this now)*
-- Email: `hello@foolproof-labs.dev` *(optional, register later)*
-
----
-
-*Built with anxiety, skepticism, and a deep fear of self-deception.*
+All repositories are MIT licensed. See each repository for installation, command examples, current status, and project-specific limitations.
