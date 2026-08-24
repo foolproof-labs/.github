@@ -8,6 +8,18 @@ Foolproof Labs 是一组面向量化研究的开源小工具，重点是让数�
 
 Open-source tools for making quantitative research easier to audit and harder to fool yourself about.
 
+## Start here
+
+All six tools are published on GitHub and PyPI as `0.1.1` alpha releases. You do not need to install the whole family. Pick the problem closest to your work:
+
+| If you want to... | Start with | First command |
+| --- | --- | --- |
+| Check whether A-share daily data is safe to use | [`ashare-data-immunity`](https://github.com/foolproof-labs/ashare-data-immunity) | `pip install ashare-data-immunity` |
+| Check whether a backtest used information too early | [`lookahead-free`](https://github.com/foolproof-labs/lookahead-free) | `pip install lookahead-free` |
+| Record a research claim before seeing the result | [`falsification-ledger`](https://github.com/foolproof-labs/falsification-ledger) | `pip install falsification-ledger` |
+
+Every repository includes a synthetic demo, tests, and command-line help. The tools are local checks and records: they do not fetch market data, choose stocks, promise returns, or place trades.
+
 The projects are small, composable utilities. They do not promise profitable strategies, replace domain review, or make an entire research process automatically correct. Each tool makes one risk or assumption explicit and testable.
 
 ## Projects
@@ -20,6 +32,50 @@ The projects are small, composable utilities. They do not promise profitable str
 | [factor-qc](https://github.com/foolproof-labs/factor-qc) | A fail-closed backtest quality gate for DSR, PBO, multiple-testing haircuts, and minimum track record length. |
 | [falsification-ledger](https://github.com/foolproof-labs/falsification-ledger) | A hash-chained record for pre-registering research claims, falsification evidence, adjudication, and hit-rate reports. |
 | [lesson-book](https://github.com/foolproof-labs/lesson-book) | A local, deterministic mistake ledger that surfaces similar past situations before the next action. |
+
+## Three real workflows
+
+### 1. Clean an A-share data file before research
+
+Use `ashare-data-immunity` when a daily-bar file may contain invalid prices, missing values, silent suspensions, limit moves, or incomplete history.
+
+```bash
+pip install ashare-data-immunity
+# from a cloned ashare-data-immunity repository:
+python examples/demo.py
+# with your own JSON bars file:
+imm clean --bars bars.json --out clean.json
+```
+
+The demo uses synthetic data. For real data, review the reported assumptions and the exchange rules for your market board before relying on the result.
+
+### 2. Check the timing of a backtest pipeline
+
+Use `lookahead-free` for a time-annotated pipeline, and `pit-adjuster` when historical prices depend on corporate-action records.
+
+```bash
+pip install lookahead-free pit-adjuster
+# from a cloned lookahead-free repository:
+python examples/demo.py
+# with your own pipeline definition:
+lf check --pipeline pipeline.json --json
+```
+
+The result is a timing check, not proof that the strategy is profitable. Data-vendor conventions and value-dependent availability still need human review.
+
+### 3. Keep research conclusions auditable
+
+Use `falsification-ledger` to write down a claim and what evidence would disprove it before looking at the result. Add `factor-qc` when a backtest also needs overfitting checks, and `lesson-book` when past mistakes should be surfaced before the next decision.
+
+```bash
+pip install falsification-ledger factor-qc lesson-book
+# from a cloned falsification-ledger repository:
+python examples/demo.py
+# verify a ledger created in a state directory:
+fl verify --state-dir ~/.research-ledger
+```
+
+These tools make the research process easier to inspect; they do not replace statistical judgment or independent review.
 
 ## Shared principles
 
