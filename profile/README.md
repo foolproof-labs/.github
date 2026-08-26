@@ -1,5 +1,7 @@
 # Foolproof Labs
 
+We build infrastructure that makes self-deception structurally impossible.
+
 ## 中文说明
 
 Foolproof Labs 是一组面向量化研究的开源小工具，重点是让数据、时间、统计结论和研究经验更容易检查。
@@ -7,6 +9,14 @@ Foolproof Labs 是一组面向量化研究的开源小工具，重点是让数�
 其中 `ashare-data-immunity` 和 `pit-adjuster` 直接面向 A 股常见的数据问题；其他工具也适用于 A 股量化研究流程。工具不荐股、不承诺收益，也不替代交易所规则、数据供应商说明或人工复核。
 
 Open-source tools for making quantitative research easier to audit and harder to fool yourself about.
+
+## Why "Foolproof"?
+
+Named after Feynman's first principle:
+
+> "You must not fool yourself — and you are the easiest person to fool." — Richard Feynman
+
+Most tools attack the *math* of overfitting. We attack the *process* — because the hardest bug in quantitative research is not in the code, it is in the story we tell ourselves after the backtest looks good. We do not promise you can't fool yourself. We promise to make it harder: each tool turns one risk or assumption into something explicit, machine-checkable, and hard to revise after the fact.
 
 ## Start here
 
@@ -84,6 +94,10 @@ These tools make the research process easier to inspect; they do not replace sta
 - Reproducible local workflows and machine-readable results.
 - MIT-licensed code with tests and examples.
 - Honest boundaries: a warning or pass is evidence about a check, not proof of a profitable strategy.
+
+## Related — Metabolism Tools
+
+We also build [workspace-metabolism](https://github.com/metabolism-tools/workspace-metabolism) under the sister organization [Metabolism Tools](https://github.com/metabolism-tools) — policy-driven file lifecycle management for agentic workspaces (audit, recyclable clean, rollback, hash-chained journal). If Foolproof Labs keeps the *research* honest, Metabolism Tools keeps the *workspace* alive.
 
 ## Contributing
 
