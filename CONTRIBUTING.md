@@ -35,6 +35,13 @@ Conventional commits (`feat:`, `fix:`, `docs:`, `chore:`, `test:`,
 Issues are handled on weekends. Bug reports that describe a
 *plausible-but-wrong* result (silent self-deception) get priority.
 
+## Good first issues
+
+Every repository labels beginner-friendly issues `good-first-issue`. These
+are deliberately small and self-contained: a missing test, a docstring
+boundary statement, an example fixture. If you are new to the organization,
+pick one, mention it in your PR, and maintainers will review quickly.
+
 ## License
 
 All repositories in this organization are MIT. By contributing you agree
