@@ -53,6 +53,14 @@ If you are doing AI-assisted financial research, start with
 `holdout-governance`. It records the evidence cutoff, checks that passed,
 the AI identity, and the human review state in one manifest.
 
+## Field notes
+
+- [Three data incidents in one night](https://github.com/holdout-labs/.github/blob/main/docs/case-study-three-incidents-one-night.md) —
+  a production watchdog caught a ×100 scale corruption, then the same
+  investigation surfaced a missing corporate-action event and a mixed-source
+  unit defect. No single check caught all three — the layers did. Both
+  failure signatures are reproducible offline in `pit-adjuster`'s examples.
+
 ## Maintaining this profile
 
 GitHub lists an org's repositories alphabetically and offers no custom
