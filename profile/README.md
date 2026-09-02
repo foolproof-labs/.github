@@ -52,3 +52,23 @@ until the evidence is in. Every research claim deserves both.
 If you are doing AI-assisted financial research, start with
 `holdout-governance`. It records the evidence cutoff, checks that passed,
 the AI identity, and the human review state in one manifest.
+
+## Maintaining this profile
+
+GitHub lists an org's repositories alphabetically and offers no custom
+ordering, so the profile pins carry the design order. Keep the pinned
+repositories in flow order (max 6):
+
+1. `holdout-governance` — entry / release gate
+2. `ashare-data-immunity` — data
+3. `pit-adjuster` — adjust
+4. `lookahead-free` — timing
+5. `factor-qc` — backtest
+6. `falsification-ledger` — falsify
+
+To pin: https://github.com/orgs/holdout-labs/repositories → pin each repo in
+that order (the pinned section shows them top-down in pin order). `lesson-book`
+(learn / loop-back) and `.github` are intentionally not pinned; their role is
+documented in the flow table above. When a new family member arrives, decide
+its flow stage first, then update the table and the pins together — the
+alphabetical list below is not the message.
