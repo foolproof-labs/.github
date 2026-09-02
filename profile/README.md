@@ -1,10 +1,10 @@
-# 🔬 Holdout
+# Holdout
 
-Evidence infrastructure for financial AI research.
+Evidence infrastructure for financial AI research and AI-generated outputs.
 
 ## What we do
 
-We build small tools that make research easier to audit and harder to overstate.
+We build a governance suite that makes research easier to audit and harder to overstate.
 
 - `ashare-data-immunity` for data quality and snapshots
 - `pit-adjuster` for point-in-time price meaning
@@ -13,6 +13,26 @@ We build small tools that make research easier to audit and harder to overstate.
 - `falsification-ledger` for claims and evidence trails
 - `lesson-book` for surfaced past mistakes
 - `holdout-governance` for AI-assisted research receipts
+
+The backbone is one flow:
+
+`data -> adjust -> timing -> backtest -> falsify -> review -> publish`
+
+`holdout-governance` sits across that flow as the release gate. It checks what was used, what passed, what is missing, and whether a human approved the result.
+
+| Flow stage | Repository | What it does |
+| --- | --- | --- |
+| entry / release gate | [`holdout-governance`](https://github.com/holdout-labs/holdout-governance) | the wrapper: one artifact, one verdict (also `gov mcp` for agents) |
+| data | [`ashare-data-immunity`](https://github.com/holdout-labs/ashare-data-immunity) | A-share daily-bar quality, snapshots, SHA-256 manifests |
+| adjust | [`pit-adjuster`](https://github.com/holdout-labs/pit-adjuster) | point-in-time back-adjustment with drift detection |
+| timing | [`lookahead-free`](https://github.com/holdout-labs/lookahead-free) | verifiable look-ahead-freedom for pipelines |
+| backtest | [`factor-qc`](https://github.com/holdout-labs/factor-qc) | fail-closed backtest quality gate (DSR/PBO/MinTRL) |
+| falsify | [`falsification-ledger`](https://github.com/holdout-labs/falsification-ledger) | pre-registration, hash-chained ledger, adjudication |
+| learn (loop-back) | [`lesson-book`](https://github.com/holdout-labs/lesson-book) | surfaced past mistakes become the next round's checks |
+
+> The pinned repositories on this profile follow this order: release gate
+> first, then the data pipeline in flow order — read the org alphabetically
+> and you miss the chain; read it as pinned and the pipeline reads top-down.
 
 ## Why the name
 
