@@ -61,6 +61,13 @@ the AI identity, and the human review state in one manifest.
   unit defect. No single check caught all three — the layers did. Both
   failure signatures are reproducible offline in `pit-adjuster`'s examples.
 
+- [Listed on awesome-quant](https://github.com/wilsonfreitas/awesome-quant) —
+  `falsification-ledger` was accepted (PR #593, merged 2026-08-29); a
+  family-wide entry PR
+  ([#620](https://github.com/wilsonfreitas/awesome-quant/pull/620)) is open
+  for `pit-adjuster`, `factor-qc`, `lookahead-free`, `lesson-book` and
+  `ashare-data-immunity`.
+
 ## Maintaining this profile
 
 GitHub lists an org's repositories alphabetically and offers no custom
