@@ -1,10 +1,16 @@
 # Holdout
 
-Evidence infrastructure for quantitative research and financial AI agents.
+Open-source infrastructure for AI-assisted quantitative research.
+
+Holdout is not a conventional alpha-factor library or a trading system. It is
+the evidence, boundary, and review layer around financial AI agents that draft
+research, run tools, and move quantitative workflows forward.
 
 ## What we do
 
-We build a governance suite that makes research easier to audit, harder to overstate, and safer to run with AI agents.
+We build a governance suite for AI-assisted quant research: every conclusion
+should carry evidence, every check should be reproducible, and every high-risk
+action should stay inside an explicit boundary.
 
 - `ashare-data-immunity` for data quality and snapshots
 - `pit-adjuster` for point-in-time price meaning
@@ -21,6 +27,11 @@ The backbone is one flow:
 `holdout-governance` sits across that flow as the release gate. It checks what was used, what passed, what is missing, and whether a human approved the result.
 
 For AI agents, Holdout is the boundary layer: agents may propose, run checks, and attach evidence, but missing evidence blocks release by default, and final publication or trading authority stays with humans and downstream systems.
+
+This is the unusual part. Most quant tools help researchers discover, backtest,
+or execute strategies. Holdout governs the workflow around those steps. It asks:
+what did the agent use, what changed, what evidence exists, what failed, and
+who approved the result before it moved forward?
 
 | Flow stage | Repository | What it does |
 | --- | --- | --- |
@@ -64,11 +75,10 @@ the AI identity, and the human review state in one manifest.
   failure signatures are reproducible offline in `pit-adjuster`'s examples.
 
 - [Listed on awesome-quant](https://github.com/wilsonfreitas/awesome-quant) —
-  `falsification-ledger` was accepted (PR #593, merged 2026-08-29); a
-  family-wide entry PR
-  ([#620](https://github.com/wilsonfreitas/awesome-quant/pull/620)) is open
-  for `pit-adjuster`, `factor-qc`, `lookahead-free`, `lesson-book` and
-  `ashare-data-immunity`.
+  6 of 7 Holdout tools are listed: `falsification-ledger` (PR #593, merged
+  2026-08-29), plus `pit-adjuster`, `factor-qc`, `lookahead-free`,
+  `lesson-book`, and `ashare-data-immunity` (PRs #611/#620, merged
+  2026-09-06).
 
 ## Maintaining this profile
 
