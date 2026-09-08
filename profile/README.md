@@ -1,10 +1,10 @@
 # Holdout
 
-Evidence infrastructure for financial AI research and AI-generated outputs.
+Evidence infrastructure for quantitative research and financial AI agents.
 
 ## What we do
 
-We build a governance suite that makes research easier to audit and harder to overstate.
+We build a governance suite that makes research easier to audit, harder to overstate, and safer to run with AI agents.
 
 - `ashare-data-immunity` for data quality and snapshots
 - `pit-adjuster` for point-in-time price meaning
@@ -19,6 +19,8 @@ The backbone is one flow:
 `data -> adjust -> timing -> backtest -> falsify -> review -> publish`
 
 `holdout-governance` sits across that flow as the release gate. It checks what was used, what passed, what is missing, and whether a human approved the result.
+
+For AI agents, Holdout is the boundary layer: agents may propose, run checks, and attach evidence, but missing evidence blocks release by default, and final publication or trading authority stays with humans and downstream systems.
 
 | Flow stage | Repository | What it does |
 | --- | --- | --- |
